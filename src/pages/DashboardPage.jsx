@@ -26,27 +26,27 @@ const DashboardPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard</title>
+        <title>Dashboard - admin</title>
       </Helmet>
       <Layout>
         <Wellcome />
         <div className="flex space-x-5">
-          <div className="mt-4 h-[160px] w-[20%] rounded-2xl bg-slate-300">
+          <div className="mt-4 h-[160px] w-[20%] rounded-2xl bg-gray-100">
             <div className="h-20 pt-2 text-center">
               <div className="flex items-center justify-center">
                 <FaUserFriends className="rounded-full bg-green-500 p-2 text-[70px]" />
               </div>
-              <p className="text-2xl font-bold">ibu hamil</p>
-              <p className="text-3xl font-bold">20</p>
+              <p className="text-2xl font-light">ibu hamil</p>
+              <p className="text-3xl font-light">20</p>
             </div>
           </div>
-          <div className="mt-4 h-[160px] w-[25%] rounded-2xl bg-slate-300">
+          <div className="mt-4 h-[160px] w-[25%] rounded-2xl bg-gray-100">
             <div className="h-20 pt-2 text-center">
               <div className="flex items-center justify-center">
                 <MdSchool className="rounded-full bg-green-500 p-2 text-[70px]" />
               </div>
-              <p className="text-xl font-bold">Mahasiswa Pendamping</p>
-              <p className="text-3xl font-bold">20</p>
+              <p className="text-xl font-light">Mahasiswa Pendamping</p>
+              <p className="text-3xl font-light">20</p>
             </div>
           </div>
         </div>

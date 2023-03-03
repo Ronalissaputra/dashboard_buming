@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Layout from "./Layout";
 import { useSelector, useDispatch } from "react-redux";
-import { adminSelector, getAdmin } from "../features/adminSlice";
+import { adminSelector, getAdmin, deleteAdmin } from "../features/adminSlice";
 
 const AllAdmin = () => {
   const dispatch = useDispatch();
-  const admins = useSelector(adminSelector.selectAll);
+  const allAdmin = useSelector(adminSelector.selectAll);
 
   useEffect(() => {
     dispatch(getAdmin());
@@ -16,12 +15,12 @@ const AllAdmin = () => {
   return (
     <>
       <Helmet>
-        <title>users</title>
+        <title>daftar admin</title>
       </Helmet>
       <Layout>
         <div className="flex flex-col">
           <div className="overflow-x-auto">
-            <div className="inline-block w-full p-1.5 align-middle">
+            <div className="inline-block w-full align-middle">
               <div className="overflow-hidden rounded-lg border">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
@@ -30,7 +29,7 @@ const AllAdmin = () => {
                         scope="col"
                         className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 "
                       >
-                        ID
+                        No
                       </th>
                       <th
                         scope="col"
@@ -65,8 +64,8 @@ const AllAdmin = () => {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-gray-200">
-                    {admins.map((admin, index) => (
-                      <tr>
+                    {allAdmin.map((admin, index) => (
+                      <tr key={admin.uuid}>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                           {index + 1}
                         </td>
@@ -80,20 +79,17 @@ const AllAdmin = () => {
                           {admin.role}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                          <a
-                            className="text-green-500 hover:text-green-700"
-                            href="#"
-                          >
+                          <button className="text-green-500 hover:text-green-700">
                             Edit
-                          </a>
+                          </button>
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                          <a
+                          <button
+                            onClick={() => dispatch(deleteAdmin(admin.uuid))}
                             className="text-red-500 hover:text-red-700"
-                            href="#"
                           >
                             Delete
-                          </a>
+                          </button>
                         </td>
                       </tr>
                     ))}

@@ -22,6 +22,11 @@ export const updateAdmin = createAsyncThunk(
   }
 );
 
+export const deleteAdmin = createAsyncThunk("admin/deleteAdmin", (uuid) => {
+  axios.delete(`http://localhost:5000/admin/${uuid}`);
+  return uuid;
+});
+
 const adminEntity = createEntityAdapter({
   selectId: (admin) => admin.id,
 });
@@ -32,6 +37,9 @@ const adminSlice = createSlice({
   extraReducers: {
     [getAdmin.fulfilled]: (state, action) => {
       adminEntity.setAll(state, action.payload);
+    },
+    [deleteAdmin.fulfilled]: (state, action) => {
+      adminEntity.removeOne(state, action.payload);
     },
     [updateAdmin.fulfilled]: (state, action) => {
       adminEntity.updateOne(state, {

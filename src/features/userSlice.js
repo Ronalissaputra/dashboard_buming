@@ -10,6 +10,11 @@ export const getUser = createAsyncThunk("user/getUser", async () => {
   return response.data;
 });
 
+export const deleteUser = createAsyncThunk("user/deleteUser", (uuid) => {
+  axios.delete(`http://localhost:5000/user/${uuid}`);
+  return uuid;
+});
+
 const userEntity = createEntityAdapter({
   selectId: (user) => user.id,
 });
@@ -18,8 +23,8 @@ const userSlice = createSlice({
   name: "user",
   initialState: userEntity.getInitialState(),
   extraReducers: {
-    [getUser.fulfilled]: (state, action) => {
-      userEntity.setAll(state, action.payload);
+    [deleteUser.fulfilled]: (state, action) => {
+      userEntity.removeOne(state, action.payload);
     },
   },
 });

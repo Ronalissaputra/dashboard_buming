@@ -5,6 +5,7 @@ import { store } from "./app/store";
 import axios from "axios";
 import App from "./App";
 import "tailwindcss/tailwind.css";
+import "react-toastify/dist/ReactToastify.css";
 
 axios.defaults.withCredentials = true;
 

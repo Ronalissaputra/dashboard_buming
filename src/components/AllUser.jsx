@@ -1,26 +1,31 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "./Layout";
 import { Helmet } from "react-helmet";
-import { useSelector, useDispatch } from "react-redux";
-import { userSelector, getUser } from "../features/userSlice";
+import axios from "axios";
+import { useDispatch } from "react-redux";
+import { deleteUser } from "../features/userSlice";
+import { Link } from "react-router-dom";
 
 const AllUser = () => {
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
-  const users = useSelector(userSelector.selectAll);
 
   useEffect(() => {
-    dispatch(getUser());
-  }, [dispatch]);
+    axios.get("http://localhost:5000/user").then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
+  console.log(users.uuid);
 
   return (
     <>
       <Helmet>
-        <title>users</title>
+        <title>Manajemen Akun</title>
       </Helmet>
       <Layout>
         <div className="flex flex-col">
           <div className="overflow-x-auto">
-            <div className="inline-block w-full p-1.5 align-middle">
+            <div className="inline-block w-full align-middle">
               <div className="overflow-hidden rounded-lg border">
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
@@ -29,7 +34,7 @@ const AllUser = () => {
                         scope="col"
                         className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 "
                       >
-                        ID
+                        No
                       </th>
                       <th
                         scope="col"
@@ -71,7 +76,7 @@ const AllUser = () => {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {users.map((user, index) => (
-                      <tr>
+                      <tr key={user.uuid}>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                           {index + 1}
                         </td>
@@ -96,12 +101,13 @@ const AllUser = () => {
                           </a>
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
-                          <a
+                          <button
+                            onClick={() => dispatch(deleteUser(user.uuid))}
                             className="text-red-500 hover:text-red-700"
                             href="#"
                           >
                             Delete
-                          </a>
+                          </button>
                         </td>
                       </tr>
                     ))}
