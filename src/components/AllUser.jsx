@@ -81,7 +81,7 @@ const AllUser = () => {
                           {index + 1}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                          {user.nama}
+                          {user.nama_ibu}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
                           {user.email}
@@ -90,7 +90,7 @@ const AllUser = () => {
                           {user.role}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                          {user.admin.name}
+                          {user.admin.nama}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                           <a

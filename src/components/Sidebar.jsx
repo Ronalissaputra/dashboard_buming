@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div className="sticky top-0 min-h-screen bg-green-800">
-      <div className="h-[50px] w-full bg-slate-50 lg:h-[200px]">
+      <div className="h-auto w-full bg-slate-50">
         <div className="flex items-center justify-center text-center lg:h-[120px]">
           <img src={logo} alt="logo" className="w-[160px] lg:mt-[30px]" />
         </div>

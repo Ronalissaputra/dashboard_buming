@@ -35,7 +35,7 @@ const Header = () => {
           </div>
         </button>
         {open ? (
-          <div className="duration-2000 absolute right-5 top-[65px] h-auto w-auto transform space-y-3 rounded-lg border bg-gray-100 p-2 transition-transform ease-in-out">
+          <div className="duration-2000 absolute right-5 top-[65px] h-auto w-auto transform space-y-3 rounded-lg border bg-gray-100 py-2 px-4 transition-transform ease-in-out">
             <div className="flex items-center text-xl font-light">
               <CgRename className="text-2xl" />
               <p className="pl-4">{admin && admin.nama}</p>
