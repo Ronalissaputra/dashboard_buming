@@ -5,7 +5,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const { admin } = useSelector((state) => state.auth);
   return (
-    <div className="fixed top-3 w-[76%]">
+    <div className="sticky top-2 mt-2 w-full">
       <div className="flex h-[60px] w-full items-center justify-between rounded-3xl bg-gray-100 px-2">
         <p className="pl-2 text-xl font-light text-green-700">
           Sejak dini cegah stunting JURUSAN KEBIDANAN POLKESMAS

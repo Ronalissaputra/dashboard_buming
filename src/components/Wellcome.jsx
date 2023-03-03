@@ -6,7 +6,7 @@ const Wellcome = () => {
   const { admin } = useSelector((state) => state.auth);
 
   return (
-    <div className="mt-5 flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100">
+    <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100">
       <div className="px-5 text-3xl font-light">
         <p>
           Hi, <span className="text-green-500">{admin && admin.name}</span>
