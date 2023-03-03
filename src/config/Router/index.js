@@ -5,6 +5,7 @@ import NotfoundPage from "../../pages/NotfoundPage";
 import AllAdmin from "../../components/AllAdmin";
 import AllUser from "../../components/AllUser";
 import AddUser from "../../components/AddUser";
+import DataMaster from "../../components/DataMaster";
 
 const Router = () => {
   return (
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/admin" element={<AllAdmin />} />
         <Route path="/users" element={<AllUser />} />
+        <Route path="/master" element={<DataMaster />} />
         <Route path="/createadmin" element={<AddUser />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>

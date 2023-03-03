@@ -30,12 +30,12 @@ const Header = () => {
           Sejak dini cegah stunting JURUSAN KEBIDANAN POLKESMAS
         </p>
         <button onClick={() => setOpen(!open)} className="">
-          <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full bg-orange-500 text-3xl font-semibold text-gray-100">
+          <div className="flex h-[50px] w-[50px] items-center justify-center rounded-full border bg-orange-500 text-3xl font-semibold text-gray-100">
             {admin && admin.nama[0]}
           </div>
         </button>
         {open ? (
-          <div className="duration-2000 absolute right-5 top-[65px] h-auto w-auto transform space-y-3 rounded-lg border bg-gray-100 py-2 px-4 transition-transform ease-in-out">
+          <div className="absolute right-5 top-[65px] h-auto w-auto transform space-y-3 rounded-lg border bg-gray-100 py-2 px-4 transition-transform duration-1000 ease-in-out">
             <div className="flex items-center text-xl font-light">
               <CgRename className="text-2xl" />
               <p className="pl-4">{admin && admin.nama}</p>

@@ -9,7 +9,7 @@ const Wellcome = () => {
     <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100">
       <div className="px-5 text-3xl font-light">
         <p>
-          Hi, <span className="text-green-500">{admin && admin.name}</span>
+          Hi, <span className="text-green-500">{admin && admin.nama}</span>
         </p>
         <p>
           Selamat datang kembali, Status anda{" "}

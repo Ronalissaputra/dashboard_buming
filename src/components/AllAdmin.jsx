@@ -70,7 +70,7 @@ const AllAdmin = () => {
                           {index + 1}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                          {admin.name}
+                          {admin.nama}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
                           {admin.email}
