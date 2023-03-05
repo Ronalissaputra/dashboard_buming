@@ -49,7 +49,7 @@ const DashboardPage = () => {
             </div>
             {(admin && admin.role) === "superadmin" && (
               <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100 px-5">
-                <p className="text-3xl font-light">{users.length}</p>
+                <p className="text-3xl font-light">{users.length - 1}</p>
                 <div className="flex items-center space-x-10">
                   <p className="text-3xl font-light">Mahasiswa Pendamping</p>
                   <MdSchool className="text-[100px] text-gray-400" />
