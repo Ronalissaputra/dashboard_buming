@@ -46,7 +46,7 @@ const Header = () => {
             </div>
             <div className="flex items-center text-xl font-light">
               <BsFillCalendar2DateFill className="text-2xl" />
-              <p className="pl-4">{admin && admin.umur}</p>
+              <p className="pl-4">{admin && admin.umur} Tahun</p>
             </div>
             <div className="flex items-center text-xl font-light">
               <FaUserGraduate className="text-2xl" />

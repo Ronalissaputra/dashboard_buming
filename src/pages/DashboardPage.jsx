@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import Layout from "../components/Layout";
 import Wellcome from "../components/Wellcome";
 import { FaUserFriends } from "react-icons/fa";
@@ -9,9 +10,16 @@ import { useNavigate } from "react-router-dom";
 import { getMe } from "../features/authSlice";
 
 const DashboardPage = () => {
+  const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isError } = useSelector((state) => state.auth);
+  const { admin, isError } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/user").then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
 
   useEffect(() => {
     dispatch(getMe());
@@ -26,28 +34,28 @@ const DashboardPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard - admin</title>
+        <title>Dashboard admin</title>
       </Helmet>
       <Layout>
-        <Wellcome />
-        <div className="flex space-x-5">
-          <div className="mt-4 h-[160px] w-[20%] rounded-2xl bg-gray-100">
-            <div className="h-20 pt-2 text-center">
-              <div className="flex items-center justify-center">
-                <FaUserFriends className="rounded-full bg-green-500 p-2 text-[70px]" />
+        <div className="space-y-2">
+          <Wellcome />
+          <div className="flex w-full gap-2">
+            <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100 px-5">
+              <p className="text-3xl font-light">{users.length}</p>
+              <div className="flex items-center space-x-10">
+                <p className="text-3xl font-light">Jumlah Ibu Hamil</p>
+                <FaUserFriends className="text-[100px] text-gray-400" />
               </div>
-              <p className="text-2xl font-light">ibu hamil</p>
-              <p className="text-3xl font-light">20</p>
             </div>
-          </div>
-          <div className="mt-4 h-[160px] w-[25%] rounded-2xl bg-gray-100">
-            <div className="h-20 pt-2 text-center">
-              <div className="flex items-center justify-center">
-                <MdSchool className="rounded-full bg-green-500 p-2 text-[70px]" />
+            {(admin && admin.role) === "superadmin" && (
+              <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100 px-5">
+                <p className="text-3xl font-light">{users.length}</p>
+                <div className="flex items-center space-x-10">
+                  <p className="text-3xl font-light">Mahasiswa Pendamping</p>
+                  <MdSchool className="text-[100px] text-gray-400" />
+                </div>
               </div>
-              <p className="text-xl font-light">Mahasiswa Pendamping</p>
-              <p className="text-3xl font-light">20</p>
-            </div>
+            )}
           </div>
         </div>
       </Layout>

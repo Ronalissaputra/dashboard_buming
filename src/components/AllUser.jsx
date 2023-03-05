@@ -15,7 +15,6 @@ const AllUser = () => {
       setUsers(response.data);
     });
   }, []);
-  console.log(users.uuid);
 
   return (
     <>
@@ -90,7 +89,7 @@ const AllUser = () => {
                           {user.role}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                          {user.admin.nama}
+                          {user.tb_user.nama}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-right text-sm font-medium">
                           <a
