@@ -34,7 +34,7 @@ const DashboardPage = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard admin</title>
+        <title>Dashboard</title>
       </Helmet>
       <Layout>
         <div className="space-y-2">

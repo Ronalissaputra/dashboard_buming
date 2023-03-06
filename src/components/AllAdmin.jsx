@@ -15,7 +15,7 @@ const AllAdmin = () => {
   return (
     <>
       <Helmet>
-        <title>daftar admin</title>
+        <title>admin</title>
       </Helmet>
       <Layout>
         <div className="flex flex-col">

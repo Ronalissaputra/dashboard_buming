@@ -22,8 +22,8 @@ const AllUser = () => {
         <title>Manajemen Akun</title>
       </Helmet>
       <Layout>
-        <div className="flex flex-col">
-          <div className="overflow-x-auto">
+        <div className="flex w-full flex-col">
+          <div className="w-full overflow-x-auto">
             <div className="inline-block w-full align-middle">
               <div className="overflow-hidden rounded-lg border">
                 <table className="min-w-full divide-y divide-gray-200">
