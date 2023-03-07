@@ -17,7 +17,7 @@ const Sidebar = () => {
   const { admin } = useSelector((state) => state.auth);
   const Links = [
     { id: 1, name: "Dashboard", to: "/dashboard", icon: <RxDashboard /> },
-    { id: 2, name: "Penjadwalan", to: "/", icon: <SlNote /> },
+    { id: 2, name: "Penjadwalan", to: "/penjadwalan", icon: <SlNote /> },
     { id: 3, name: "Tamabah User", to: "/laporan", icon: <TbReport /> },
     { id: 4, name: "Data Master", to: "/master", icon: <FiDatabase /> },
     { id: 5, name: "Manajemen Akun", to: "/users", icon: <FaUserCog /> },
