@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { getMe } from "../features/authSlice";
+import { adminSelector } from "../features/adminSlice.js";
 import axios from "axios";
 import Layout from "../components/Layout";
 import Wellcome from "../components/Wellcome";
@@ -7,13 +9,14 @@ import { MdSchool } from "react-icons/md";
 import { Helmet } from "react-helmet";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getMe } from "../features/authSlice";
 
 const DashboardPage = () => {
   const [users, setUsers] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { admin, isError } = useSelector((state) => state.auth);
+  const allAdmin = useSelector(adminSelector.selectAll);
+  console.log(allAdmin);
 
   useEffect(() => {
     axios.get("http://localhost:5000/user").then((response) => {
@@ -49,7 +52,7 @@ const DashboardPage = () => {
             </div>
             {(admin && admin.role) === "superadmin" && (
               <div className="flex h-[120px] w-full items-center justify-between rounded-2xl bg-gray-100 px-5">
-                <p className="text-3xl font-light">{users.length - 1}</p>
+                <p className="text-3xl font-light">{allAdmin.length - 1}</p>
                 <div className="flex items-center space-x-10">
                   <p className="text-3xl font-light">Mahasiswa Pendamping</p>
                   <MdSchool className="text-[100px] text-gray-400" />

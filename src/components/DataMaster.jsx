@@ -1,39 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Layout from "./Layout";
-import { RxArrowBottomRight } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 const DataMaster = () => {
-  const [detail, setDetail] = useState(false);
-  console.log(detail);
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    axios.get("http://localhost:5000/user").then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
+
+  console.log(users);
+
   return (
     <Layout>
-      <div className="grid grid-cols-2 gap-4">
-        <div
-          className={`${
-            detail ? "h-auto" : "h-20"
-          } translate w-full transform rounded-md bg-green-600 p-2 duration-1000 ease-in-out`}
-        >
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-2xl text-gray-200">Nama Ibu Hamil - icha</p>
+      <div className="grid grid-cols-2 gap-2">
+        {users.map((user) => (
+          <Link
+            to={`/detail/${user.uuid}`}
+            key={user.uuid}
+            className="translate w-full rounded-md bg-gray-100 p-2 px-3 hover:bg-gray-300"
+          >
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-2xl font-light">{user.nama_ibu}</p>
+                <p className="text-2xl font-light">{user.nama_suami}</p>
+              </div>
+              <div className="flex items-center space-x-5">
+                <p className="text-2xl font-light">Jumlah anak</p>
+                <p className="text-2xl font-semibold">{user.tb_bayis.length}</p>
+              </div>
             </div>
-            <div
-              onClick={() => setDetail(!detail)}
-              className="flex cursor-pointer items-center rounded-md px-4 text-2xl text-gray-200 hover:bg-gray-600"
-            >
-              <button>Detail</button>
-              <RxArrowBottomRight className="font-bold" />
-            </div>
-          </div>
-          <div className={`${detail ? "visible" : "invisible"}`}>
-            <p className="text-2xl text-gray-200">Nama Ibu Hamil - icha</p>
-            <p className="text-2xl text-gray-200">Nama Suami - oyen</p>
-            <p className="text-2xl text-gray-200">Nama Ibu Hamil - icha</p>
-            <p className="text-2xl text-gray-200">Nama Suami - oyen</p>
-          </div>
-        </div>
-        <div className="h-20 w-full rounded-md bg-green-600"></div>
-        <div className="h-20 w-full rounded-md bg-green-600"></div>
+          </Link>
+        ))}
       </div>
     </Layout>
   );

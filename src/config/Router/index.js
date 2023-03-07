@@ -6,6 +6,7 @@ import AllAdmin from "../../components/AllAdmin";
 import AllUser from "../../components/AllUser";
 import AddUser from "../../components/AddUser";
 import DataMaster from "../../components/DataMaster";
+import DetailMaster from "../../components/DetailMaster";
 
 const Router = () => {
   return (
@@ -16,6 +17,7 @@ const Router = () => {
         <Route path="/admin" element={<AllAdmin />} />
         <Route path="/users" element={<AllUser />} />
         <Route path="/master" element={<DataMaster />} />
+        <Route path="/detail/:id" element={<DetailMaster />} />
         <Route path="/createadmin" element={<AddUser />} />
         <Route path="*" element={<NotfoundPage />} />
       </Routes>
