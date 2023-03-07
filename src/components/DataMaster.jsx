@@ -21,7 +21,7 @@ const DataMaster = () => {
           <Link
             to={`/detail/${user.uuid}`}
             key={user.uuid}
-            className="translate w-full rounded-md bg-gray-100 p-2 px-3 hover:bg-gray-300"
+            className="w-full rounded-md bg-gray-100 p-2 px-3 duration-150 ease-in-out hover:scale-105 hover:bg-gray-300"
           >
             <div className="flex items-center justify-between">
               <div>

@@ -3,12 +3,9 @@ import { useDispatch } from "react-redux";
 import { LogOut, reset } from "../features/authSlice";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { CgRename } from "react-icons/cg";
-import { MdMarkEmailRead } from "react-icons/md";
-import { RiAdminFill } from "react-icons/ri";
-import { BiPhoneCall } from "react-icons/bi";
-import { FaRegAddressCard, FaUserGraduate } from "react-icons/fa";
-import { BsFillCalendar2DateFill } from "react-icons/bs";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { AiOutlineLogout } from "react-icons/ai";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 
 const Header = () => {
@@ -35,47 +32,41 @@ const Header = () => {
           </div>
         </button>
         {open ? (
-          <div className="absolute right-5 top-[65px] h-auto w-auto transform space-y-3 rounded-lg border bg-gray-100 py-2 px-4 transition-transform duration-1000 ease-in-out">
-            <div className="flex items-center text-xl font-light">
-              <CgRename className="text-2xl" />
-              <p className="pl-4">{admin && admin.nama}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <MdMarkEmailRead className="text-2xl" />
-              <p className="pl-4">{admin && admin.email}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <BsFillCalendar2DateFill className="text-2xl" />
-              <p className="pl-4">{admin && admin.umur} Tahun</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <FaUserGraduate className="text-2xl" />
-              <p className="pl-4">{admin && admin.prodi}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <MdMarkEmailRead className="text-2xl" />
-              <p className="pl-4">{admin && admin.semester}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <BiPhoneCall className="text-2xl" />
-              <p className="pl-4">{admin && admin.no_hp}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <FaRegAddressCard className="text-2xl" />
-              <p className="pl-4">{admin && admin.alamat}</p>
-            </div>
-            <div className="flex items-center text-xl font-light">
-              <RiAdminFill className="text-2xl" />
-              <p className="pl-4">{admin && admin.role}</p>
-            </div>
-            <div className="border"></div>
-            <div
-              onClick={logout}
-              className="flex h-10 cursor-pointer items-center rounded-md hover:bg-gray-300"
-            >
-              <div className="flex items-center text-xl font-light">
-                <RiLogoutBoxRFill className="text-2xl" />
-                <p className="pl-4">logout</p>
+          <div className="absolute right-5 top-[65px] h-auto w-auto transform rounded-lg border bg-gray-100  transition-transform duration-1000 ease-in-out">
+            <div className="flex flex-col items-center justify-center rounded-t-lg bg-green-700 pt-6">
+              <div className="absolute top-6 flex h-[70px] w-[70px] items-center justify-center rounded-full border-2 bg-orange-500 text-3xl font-semibold text-gray-100">
+                {admin && admin.nama[0]}
+              </div>
+              <div>
+                <div className="mt-10 w-[350px] bg-gray-100 pt-2">
+                  <div className="mt-5 flex items-center justify-center">
+                    <div className="text-center">
+                      <p className="text-xl font-light">
+                        {admin && admin.nama}
+                      </p>
+                      <p className="text-xl font-light">
+                        {admin && admin.email}
+                      </p>
+                    </div>
+                  </div>
+                  <div className="mt-5 w-full space-y-2 px-2">
+                    <div className="flex h-10 cursor-pointer items-center rounded-md hover:bg-gray-300">
+                      <HiOutlineUserCircle className="text-3xl" />
+                      <p className="pl-4 text-xl font-light">Ubah Profil</p>
+                    </div>
+                    <div className="flex h-10 cursor-pointer items-center rounded-md hover:bg-gray-300">
+                      <RiLockPasswordLine className="text-3xl" />
+                      <p className="pl-4 text-xl font-light">Ganti Password</p>
+                    </div>
+                    <div
+                      onClick={logout}
+                      className="flex h-10 cursor-pointer items-center rounded-md hover:bg-gray-300"
+                    >
+                      <AiOutlineLogout className="text-3xl" />
+                      <p className="pl-4 text-xl font-light">Log Out</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

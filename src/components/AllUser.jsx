@@ -50,12 +50,6 @@ const AllUser = () => {
                         scope="col"
                         className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 "
                       >
-                        Role
-                      </th>
-                      <th
-                        scope="col"
-                        className="px-6 py-3 text-left text-xs font-bold uppercase text-gray-500 "
-                      >
                         Mahasiswa
                       </th>
                       <th
@@ -83,9 +77,6 @@ const AllUser = () => {
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
                           {user.email}
-                        </td>
-                        <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
-                          {user.role}
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
                           {user.tb_user.nama}

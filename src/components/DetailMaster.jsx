@@ -12,10 +12,7 @@ const DetailMaster = () => {
       setBumil(response.data);
       setBayis(response.data.tb_bayis);
     });
-  }, []);
-  console.log(bayis);
-
-  //   console.log(bumil);
+  }, [id]);
 
   return (
     <Layout>
@@ -41,7 +38,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        nik
+                        Nik
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-800">
                         {bumil.nik}
@@ -49,15 +46,15 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        umur
+                        Umur
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        {bumil.umur}
+                        {bumil.umur} Tahun
                       </td>
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        lama_nikah
+                        Lama Nikah
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.lama_nikah} tahun
@@ -65,7 +62,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        suku
+                        Suku
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.suku}
@@ -73,7 +70,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        agama
+                        Agama
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.agama}
@@ -81,7 +78,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        pendidikan
+                        Pendidikan
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.pendidikan}
@@ -89,7 +86,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        pekerjaan
+                        Pekerjaan
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.pekerjaan}
@@ -97,7 +94,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        alamat
+                        Alamat
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.alamat}
@@ -105,7 +102,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        no_hp
+                        Nomor handphone
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.no_hp}
@@ -113,7 +110,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        gol_darah
+                        Golongan Darah
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.gol_darah}
@@ -121,7 +118,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        no_bpjs
+                        Nomor bpjs
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.no_bpjs}
@@ -129,7 +126,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        tempat_periksa
+                        Tempat Periksa
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.tempat_periksa}
@@ -137,7 +134,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        email
+                        Email
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.email}
@@ -163,7 +160,7 @@ const DetailMaster = () => {
                   <tbody className="divide-y divide-gray-200">
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        nama_suami
+                        Nama Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.nama_suami}
@@ -171,15 +168,15 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        umur_suami
+                        Umur Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        {bumil.umur_suami}
+                        {bumil.umur_suami} Tahun
                       </td>
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        agama_suami
+                        Agama Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.agama_suami}
@@ -187,7 +184,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        suku_suami
+                        Suku Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.suku_suami}
@@ -195,7 +192,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        pendidikan_suami
+                        Pendidikan suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.pendidikan_suami}
@@ -203,7 +200,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        pekerjaan_suami
+                        Pekerjaan Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.pekerjaan_suami}
@@ -211,7 +208,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        alamat_suami
+                        Alamat Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.alamat_suami}
@@ -219,7 +216,7 @@ const DetailMaster = () => {
                     </tr>
                     <tr>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                        no_hpsuami
+                        No Handphone Suami
                       </td>
                       <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                         {bumil.no_hpsuami}
@@ -246,7 +243,7 @@ const DetailMaster = () => {
                     <tbody className="divide-y divide-gray-200">
                       <tr>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                          nama_bayi
+                          Nama Bayi
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                           {bayi.nama_bayi}
@@ -254,7 +251,15 @@ const DetailMaster = () => {
                       </tr>
                       <tr>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                          jenis_klamin
+                          Anak Ke
+                        </td>
+                        <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
+                          {bayi.anak_ke}
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
+                          Jenis Kelamin
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
                           {bayi.jenis_klamin}
@@ -262,10 +267,10 @@ const DetailMaster = () => {
                       </tr>
                       <tr>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                          tnggl_lahir
+                          Tanggal Lahir
                         </td>
                         <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-gray-800">
-                          {bayi.anak_ke}
+                          {bayi.tnggl_lahir}
                         </td>
                       </tr>
                     </tbody>
